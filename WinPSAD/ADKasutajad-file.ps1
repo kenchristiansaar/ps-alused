@@ -9,5 +9,10 @@ $users = Import-Csv $file -Encoding Default -Delimiter ";"
 # Foreachiga uued read iga kasutaja parameetri jaoks
 
 foreach ($user in $users){
-    echo $user
+
+    # kasutaja nimi on eesnimi.perenimi
+
+    $username = $user.FirstName + "." + $user.LastName
+    $username = $username.ToLower()
+    echo $username
     }
