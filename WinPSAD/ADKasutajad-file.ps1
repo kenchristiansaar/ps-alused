@@ -50,5 +50,11 @@ foreach ($user in $users){
     $username = $user.FirstName + "." + $user.LastName
     $username = $username.ToLower()
     $username = Translit($username)
-    echo $username
+    
+
+    # E-maili loomine
+
+    $upname = $username + "@sv-kool.local"
+
+    echo $upname
     }
