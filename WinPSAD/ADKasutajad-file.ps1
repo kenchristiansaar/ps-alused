@@ -60,6 +60,15 @@ foreach ($user in $users){
 
     $displayname = $user.FirstName + " " + $user.LastName
 
-    echo $displayname
+    # AD kasutajate loomine
+
+    New-ADUser -Name $username `
+        -DisplayName $displayname `
+        -GivenName $user.FirstName `
+        -Surname $user.LastName `
+        -Department $user.Department `
+        -Title $user.Role `
+        -UserPrincipalName $upname `
+        -AccountPassword (ConvertTo-SecureString $user.Password -AsPlainText -force) -Enabled $true
 
     }
