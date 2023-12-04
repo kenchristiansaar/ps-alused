@@ -56,5 +56,10 @@ foreach ($user in $users){
 
     $upname = $username + "@sv-kool.local"
 
-    echo $upname
+    # Ekraaninime loomine
+
+    $displayname = $user.FirstName + " " + $user.LastName
+
+    echo $displayname
+
     }
