@@ -16,11 +16,11 @@ $Parool = "Parool1!" | ConvertTo-SecureString -AsPlainText -Force
 
 try
 {
-    New-LocalUser -Name $KasutajaNimi -Password $Parool -FullName $TaisNimi -Description "$KontoKirjeldus" -ErrorAction Stop
+    New-LocalUser -Name $KasutajaNimi -Password $Parool -FullName $TaisNimi -Description "$KontoKirjeldus" -ErrorAction Stop | Out-Null
     Write-Host "Loodav kasutaja on $KasutajaNimi"
 }
 catch
 {
     Write-Host "Kasutaja loomisega tekkis probleem"
-    Write-Host "Probleemi detailid: $?"
+    Write-Host "Probleemi detailid: $_"
 }
