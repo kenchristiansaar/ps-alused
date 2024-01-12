@@ -10,6 +10,7 @@ try
 {
     Remove-LocalUser -Name $KasutajaNimi -ErrorAction Stop | Out-Null
     Write-Host "Kustutatav kasutaja on $KasutajaNimi"
+    Write-Host "Kasutaja $KasutajaNimi on kustutatud"
 }
 catch
 {
